@@ -1,16 +1,16 @@
 const express = require('express');
 const path = require('path');
 const indexRouter = require('./routes/index');
-const newRouter = require('./routes/new');
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 
 // register view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+
 app.use('/', indexRouter);
-app.use('/new', newRouter);
 
 app.use((req, res) => {
 	res.send('404');

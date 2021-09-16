@@ -7,7 +7,7 @@ html(lang="en")
         title Document
     body 
         h1 Add messages 
-        form(action="Post")
-            input(type="text",placeholder="UserName")
-            input(type="text",placeholder="Message")
+        form(action="/new", method="post") 
+            input(type="text",placeholder="Username",name='username')
+            input(type="text",placeholder="Message",name='message')
             button(type="submit") Submit  
